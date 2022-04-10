@@ -27,14 +27,14 @@ if last_row['ADX_14'] >= 25:
         print(message)
     if last_row['DMN_14'] > last_row['DMP_14']:
         message = f"STRONG DOWNTREND: The ADX is {last_row['ADX_14']:.2f}"
-        print(message)
+        print(message) 
     payload = {
         "username": "alertbot",
         "content": message
     }
     requests.post(discord_webhook_url, json=payload)
 
-    
+
 if last_row['ADX_14'] < 25:
     message = f"NO TREND: The ADX is {last_row['ADX_14']:.2f}"
     print(message)
